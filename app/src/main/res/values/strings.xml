@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Questions</string>
     <string name="title">Questions!</string>
+    <string name="question">question</string>
+    <string name="optionA">optionA</string>
+    <string name="optionB">optionB</string>
+    <string name="optionC">optionC</string>
+    <string name="optionD">optionD</string>
 </resources>

@@ -1,36 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".QuestionActivity">
 
-    <LinearLayout
+    <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:Layout_gravity="center | top"
-            android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TableRow
+            android:gravity="center">
             <TextView
+                android:id="@+id/questionTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Question"
+                android:textSize="20dp"
+                android:padding="16dp"
                 android:gravity="center"
-                android:text="@string/title"
-                android:textSize="40dp"/>
+                />
+        </TableRow>
 
-            <Button
-                android:id="@+id/button"
+        <TableRow
+            android:gravity="center">
+            <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Start"
-                android:layout_gravity="center"/>
-        </LinearLayout>
-    </LinearLayout>
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_span="2">
+                <RadioButton
+                    android:id="@+id/optionA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Opción A"
+                    android:layout_gravity="center"
+                    />
+                <RadioButton
+                    android:id="@+id/optionB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Opción B"
+                    android:layout_gravity="center"
+                    />
+                <RadioButton
+                    android:id="@+id/optionC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Opción C"
+                    android:layout_gravity="center"
+                    />
+                <RadioButton
+                    android:id="@+id/optionD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Opción D"
+                    android:layout_gravity="center"
+                    />
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow
+            android:padding="16dp"
+            android:gravity="center">
+            <Button
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Siguiente"
+                />
+        </TableRow>
+
+        <TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/pointsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Puntos: "
+                    />
+                <TextView
+                    android:id="@+id/points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow android:gravity="center">
+            <Button
+                android:id="@+id/goHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volver a inicio"
+                android:padding="16dp"
+                />
+        </TableRow>
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,22 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Question {
-    private String question;
-    private String optionA;
-    private String optionB;
-    private String optionC;
-    private String optionD;
-    private String correctAnswer;
-    private static int puntuation = 0;
-    private static int currentQuestionIndex = -1; // Inicialmente, no hay ninguna pregunta actual
+    public String question;
+    public String optionA;
+    public String optionB;
+    public String optionC;
+    public String optionD;
+    public String correctAnswer;
+    public static int puntuation = 0;
+    public static int currentQuestionIndex = -1; // Inicialmente, no hay ninguna pregunta actual
 
-    // Lista de preguntas
+    // Lista de preguntas predefinidas
     private static List<Question> questions = new ArrayList<>();
-
-    // Método para agregar una pregunta
-    public static void addQuestion(String question, String optionA, String optionB, String optionC, String optionD, String correctAnswer) {
-        questions.add(new Question(question, optionA, optionB, optionC, optionD, correctAnswer));
-    }
 
     // Constructor
     public Question(String question, String optionA, String optionB, String optionC, String optionD, String correctAnswer) {
@@ -29,6 +24,11 @@ public class Question {
         this.optionC = optionC;
         this.optionD = optionD;
         this.correctAnswer = correctAnswer;
+    }
+
+    // Método para agregar una pregunta predefinida
+    public static void addQuestion(Question question) {
+        questions.add(question);
     }
 
     // Método para avanzar a la siguiente pregunta
@@ -41,10 +41,11 @@ public class Question {
     }
 
     // Método para verificar si la respuesta es correcta
-    public static boolean isCorrectAnswer(String answer) {
-        if (currentQuestionIndex >= 0 && currentQuestionIndex < questions.size()) {
-            return questions.get(currentQuestionIndex).correctAnswer.equalsIgnoreCase(answer);
-        }
-        return false; // No hay pregunta actual
+    public boolean isCorrectAnswer(String answer) {
+        return correctAnswer.equalsIgnoreCase(answer);
+    }
+
+    public static void increasePuntuation() {
+        puntuation++;
     }
 }
