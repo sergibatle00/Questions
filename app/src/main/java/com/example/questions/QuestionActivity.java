@@ -76,6 +76,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Navega de vuelta a la actividad principal (MainActivity)
                 Intent intent = new Intent(QuestionActivity.this, MainActivity.class);
+                Question.resetPoints();
                 startActivity(intent);
                 finish(); // Cierra la actividad actual
             }
@@ -94,7 +95,7 @@ public class QuestionActivity extends AppCompatActivity {
             optionD.setText("D) " + currentQuestion.optionD);
             pointsTextView.setText(String.valueOf(Question.puntuation));
         } else {
-            questionTextView.setText("FIN");
+            questionTextView.setText("END");
             pointsTextView.setTextColor(Color.RED);
             // Desactiva el botón "Next" cuando no hay más preguntas
             nextButton.setEnabled(false);

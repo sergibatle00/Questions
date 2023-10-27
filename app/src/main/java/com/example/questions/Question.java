@@ -48,4 +48,8 @@ public class Question {
     public static void increasePuntuation() {
         puntuation++;
     }
+
+    public static void resetPoints() {
+        puntuation = 0;
+    }
 }

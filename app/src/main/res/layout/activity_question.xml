@@ -77,7 +77,7 @@
                 android:id="@+id/next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Siguiente"
+                android:text="Next"
                 />
         </TableRow>
 
@@ -92,7 +92,7 @@
                     android:id="@+id/pointsLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Puntos: "
+                    android:text="Points: "
                     />
                 <TextView
                     android:id="@+id/points"
@@ -108,7 +108,7 @@
                 android:id="@+id/goHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Volver a inicio"
+                android:text="Return home"
                 android:padding="16dp"
                 />
         </TableRow>
